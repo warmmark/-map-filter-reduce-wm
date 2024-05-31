@@ -77,3 +77,14 @@ console.log(findAverageMinMaxMarks([
   { name: 'Mike', class: 'B', mark: 5 },
   { name: 'Alex', class: 'C', mark: 2 },
 ]));
+
+function workWithArrayOfObjectsOfMarks(arrOfObj, key) {
+  return arrOfObj.reduce((acc, element) => acc[element[key]] ? ({...acc, [element[key]]: [...acc[element[key]], element]}) : ({...acc, [element[key]]: [element]}), new Object());
+}
+console.log(workWithArrayOfObjectsOfMarks([
+  { name: 'Tirion', class: 'B', mark: 3 },
+  { name: 'Keit', class: 'A', mark: 3 },
+  { name: 'Ramsey', class: 'A', mark: 4 },
+  { name: 'Mike', class: 'B', mark: 5 },
+  { name: 'Alex', class: 'C', mark: 2 },
+], 'mark'));
