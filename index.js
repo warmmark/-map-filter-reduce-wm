@@ -88,3 +88,28 @@ console.log(workWithArrayOfObjectsOfMarks([
   { name: 'Mike', class: 'B', mark: 5 },
   { name: 'Alex', class: 'C', mark: 2 },
 ], 'mark'));
+
+function findNumberOfUsingDomains(array) {
+  const normalArr = array.map((element) => element.trim());
+  const result = normalArr
+  .reduce((acc, element) => {
+    if (element.includes('http://')) {
+      Object.hasOwn(acc, 'http') ? acc['http'] += 1 : acc['http'] = 1;
+    } else if (element.includes('https://')) {
+      Object.hasOwn(acc, 'https') ? acc['https'] += 1 : acc['https'] = 1;
+    } else {
+      Object.hasOwn(acc, 'http') ? acc['http'] += 1 : acc['http'] = 1;
+    }
+    return acc;
+  }, new Object());
+  return result;
+}
+console.log(findNumberOfUsingDomains([
+  'http://google.com',
+  'https://hexlet.io',
+  ' yandex.ru',
+  'dzen.ru',
+  'https://ya.ru',
+  'https://github.com',
+  'http://mail.ru',
+]))
