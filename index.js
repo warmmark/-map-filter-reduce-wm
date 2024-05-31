@@ -43,6 +43,7 @@ function countInversions(arrayOfNums) {
   }, {lastElement: undefined, count: 0}).count;
 }
 console.log(countInversions([24, 35, 29, 44, 8, 22, 4]));
+console.log(countInversions([1, 2, 3, 4, 5, 6, 7]));
 
 function areAnyTheSameHeight(firstArray, secondArray) {
   const countOfTheSame = firstArray
