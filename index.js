@@ -60,3 +60,20 @@ function areAnyPairOfTheSameNums(array) {
 console.log(areAnyPairOfTheSameNums([7, 12, 40, 21, 57, 32, 21, 5, 7, 21]));
 console.log(areAnyPairOfTheSameNums([7, 12, 40, 21, 57, 32]));
 console.log(areAnyPairOfTheSameNums([21]));
+
+function findAverageMinMaxMarks(arrOfObj) {
+  const averageMark = arrOfObj
+  .reduce((acc, element) => acc += element.mark, 0) / arrOfObj.length;
+  const minMark = arrOfObj
+  .reduce((acc, element) => acc < element.mark ? acc : acc = element.mark, arrOfObj[0].mark);
+  const maxMark = arrOfObj
+  .reduce((acc, element) => acc > element.mark ? acc : acc = element.mark, arrOfObj[0].mark);
+  return `average mark: ${averageMark}, min mark: ${minMark}, max mark: ${maxMark}`;
+}
+console.log(findAverageMinMaxMarks([
+  { name: 'Tirion', class: 'B', mark: 3 },
+  { name: 'Keit', class: 'A', mark: 3 },
+  { name: 'Ramsey', class: 'A', mark: 4 },
+  { name: 'Mike', class: 'B', mark: 5 },
+  { name: 'Alex', class: 'C', mark: 2 },
+]));
