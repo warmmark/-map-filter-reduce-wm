@@ -20,3 +20,14 @@ function changeFirstAndLastLetterOnEachOther(string) {
   return result;
 }
 console.log(changeFirstAndLastLetterOnEachOther("В лесу родилась ёлочка"));
+
+function findPositiveNumsAndSumOfNegative(arrayOfNums) {
+  const positiveNums = arrayOfNums.filter((el) => el > 0);
+  const sumOfNegativeNums = arrayOfNums
+  .filter((el) => el < 0)
+  .reduce((acc, element) => acc += element, 0);
+  return `positive nums: ${positiveNums}.
+how many positives: ${positiveNums.length}.
+sum of negatives: ${sumOfNegativeNums}`;
+}
+console.log(findPositiveNumsAndSumOfNegative([-7, 5, 9, 0, 2, 6, 19, -21]));
