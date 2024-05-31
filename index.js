@@ -31,3 +31,15 @@ how many positives: ${positiveNums.length}.
 sum of negatives: ${sumOfNegativeNums}`;
 }
 console.log(findPositiveNumsAndSumOfNegative([-7, 5, 9, 0, 2, 6, 19, -21]));
+
+function countInversions(arrayOfNums) {
+  return arrayOfNums.reduce((acc, currentValue) => {
+    const lastIterationValue = acc.lastElement;
+    if (lastIterationValue === undefined) return {lastElement: currentValue, count: 0};
+    const lastCounter = acc.count;
+    let shouldWeAddPlusOne = 0;
+    if (acc.lastElement > currentValue) shouldWeAddPlusOne = 1;
+    return {lastElement: currentValue, count: lastCounter + shouldWeAddPlusOne};
+  }, {lastElement: undefined, count: 0}).count;
+}
+console.log(countInversions([24, 35, 29, 44, 8, 22, 4]));
