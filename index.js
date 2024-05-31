@@ -53,3 +53,10 @@ function areAnyTheSameHeight(firstArray, secondArray) {
 }
 console.log(areAnyTheSameHeight([172, 181, 192, 167], [157, 197, 181]));
 console.log(areAnyTheSameHeight([172, 181, 192, 167], [157, 197, 182]));
+
+function areAnyPairOfTheSameNums(array) {
+  return array.reduce((acc, element) => acc.add(element), new Set()).size !== array.length;
+}
+console.log(areAnyPairOfTheSameNums([7, 12, 40, 21, 57, 32, 21, 5, 7, 21]));
+console.log(areAnyPairOfTheSameNums([7, 12, 40, 21, 57, 32]));
+console.log(areAnyPairOfTheSameNums([21]));
