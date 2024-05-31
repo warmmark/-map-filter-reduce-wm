@@ -43,3 +43,12 @@ function countInversions(arrayOfNums) {
   }, {lastElement: undefined, count: 0}).count;
 }
 console.log(countInversions([24, 35, 29, 44, 8, 22, 4]));
+
+function areAnyTheSameHeight(firstArray, secondArray) {
+  const countOfTheSame = firstArray
+  .reduce((acc, element) => secondArray.includes(element) ? acc += 1 : acc, 0);
+  if (countOfTheSame === 0) return 'Нет, во второй команде нет игроков с ростом игроков первой команды.';
+  return `Да, во второй команде есть игроки с ростом игроков первой команды. Таких игроков ${countOfTheSame}`;
+}
+console.log(areAnyTheSameHeight([172, 181, 192, 167], [157, 197, 181]));
+console.log(areAnyTheSameHeight([172, 181, 192, 167], [157, 197, 182]));
